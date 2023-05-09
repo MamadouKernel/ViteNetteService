@@ -1,0 +1,20 @@
+ErrorDocument 404 /404.php
+ErrorDocument 403 /404.php
+<IfModule mod_rewrite.c>
+ # Rewrite personaliser
+
+    Options +FollowSymlinks
+    RewriteEngine on
+
+    # redirect
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^accueil$ index.php$1 [L]
+    RewriteRule ^contact$ contact.php$1 [L]
+    RewriteRule ^rechargement$ team.php$1 [L]
+    RewriteRule ^achat$ booking.php$1 [L]
+    RewriteRule ^apropos$ about.php$1 [L]
+    #RewriteRule ^admin/$ connexion.php$1 [L]
+
+
+</IfModule>
